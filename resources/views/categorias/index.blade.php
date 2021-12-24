@@ -1,3 +1,4 @@
+<a href="{{ route('categorias.create') }}">Crear</a>
 <table border="1">
     <thead>
         <th>id</th>
