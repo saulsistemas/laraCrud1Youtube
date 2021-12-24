@@ -36,7 +36,11 @@ class CategoriaController extends Controller
   
     public function show($id)
     {
-        //
+        $categoria = Categoria::find($id);
+        $data = [
+            'categoria'=>$categoria,
+        ];
+        return view('categorias.show',$data);
     }
 
   
@@ -62,6 +66,8 @@ class CategoriaController extends Controller
   
     public function destroy($id)
     {
-        return $id;
+        $categoria = Categoria::find($id);
+        $categoria->delete();
+        return redirect()->route('categorias.index');
     }
 }

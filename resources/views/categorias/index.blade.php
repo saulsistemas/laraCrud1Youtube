@@ -13,11 +13,12 @@
                 <td>{{$categoria->codigo}}</td>
                 <td>{{$categoria->nombre}}</td>
                 <td>
+                    <a href="{{ route('categorias.show', $categoria->id) }}">+</a>
                     <a href="{{ route('categorias.edit', $categoria->id) }}">Editar</a>
                     <form action="{{ route('categorias.destroy', $categoria->id) }}" method="POST">
                     @method('DELETE')
                     @csrf
-                    <input type="submit" value="Enviar">
+                    <input type="submit" value="Eliminar">
                     </form>
                 </td>
             </tr>
