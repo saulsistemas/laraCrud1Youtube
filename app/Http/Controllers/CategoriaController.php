@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
@@ -9,7 +10,11 @@ class CategoriaController extends Controller
   
     public function index()
     {
-        return 'index';
+        $categorias = Categoria::all();
+        $data = [
+            'categorias'=>$categorias,
+        ];
+        return view('categorias.index',$data);
     }
 
 
@@ -34,7 +39,7 @@ class CategoriaController extends Controller
   
     public function edit($id)
     {
-        //
+        return $id;
     }
 
 
@@ -46,6 +51,6 @@ class CategoriaController extends Controller
   
     public function destroy($id)
     {
-        //
+        return $id;
     }
 }
