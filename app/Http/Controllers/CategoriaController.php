@@ -9,19 +9,20 @@ class CategoriaController extends Controller
   
     public function index()
     {
-        //
+        return 'index';
     }
 
 
     public function create()
     {
-        //
+        return 'create';
+
     }
 
  
     public function store(Request $request)
     {
-        //
+        return 'store';
     }
 
   
